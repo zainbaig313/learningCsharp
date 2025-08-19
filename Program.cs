@@ -861,20 +861,472 @@
 //     Console.WriteLine(item);
 // }
 
-string pangram = "The quick brown fox jumps over the lazy dog";
+// string pangram = "The quick brown fox jumps over the lazy dog";
 
-string[] pangram2 = pangram.Split(' ');
+// string[] pangram2 = pangram.Split(' ');
 
-string[] newpangram = new string[pangram2.Length];
+// string[] newpangram = new string[pangram2.Length];
 
-for (int i = 0; i < pangram2.Length; i++)
+// for (int i = 0; i < pangram2.Length; i++)
+// {
+//     char[] c = pangram2[i].ToCharArray(); // the t,h,e
+
+//     Array.Reverse(c);    //e h t
+
+//     newpangram[i] = new string(c);
+// }
+
+// string result = String.Join(" ", newpangram);
+// Console.WriteLine(result);
+
+
+// string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+
+// string[] orderStream2 = orderStream.Split(',');
+
+// Array.Sort(orderStream2);
+
+// // string[] newmessage = new string[orderStream2.Length];
+
+// for (int i = 0; i < orderStream2.Length; i++)
+// {
+//     char[] c = orderStream2[i].ToCharArray();
+
+//     if (c.Length == 4)
+//     {
+//         string message = new string(c);
+//         Console.WriteLine(message);
+//     }
+//     else
+//     {
+//         string message = new string(c);
+//         Console.WriteLine($"{message}    -Error");
+//     }
+// }
+
+
+// decimal price = 67.55m;
+// decimal salePrice = 59.99m;
+
+// string yourDiscount = String.Format("You saved {0:C2} off the regular {1:C2} price. ", (price - salePrice), price);
+
+// yourDiscount += $"A discount of {((price - salePrice)/price):P2}!"; //inserted
+// Console.WriteLine(yourDiscount);
+
+
+// string paymentId = "7692wwC";
+//  string payeeName = "Mr. Stephen Ortega";
+
+//  var formattedLine = paymentId.PadRight(6);
+//  formattedLine += payeeName.PadRight(24);
+
+//  Console.WriteLine(formattedLine);
+//  Console.WriteLine(formattedLine.Length);
+// using System.Security.Cryptography;
+
+// string customerName = "Ms. Barros";
+
+// string currentProduct = "Magic Yield";
+// int currentShares = 2975000;
+// decimal currentReturn = 0.1275m;
+// decimal currentProfit = 55000000.0m;
+
+// string newProduct = "Glorious Future";
+// decimal newReturn = 0.13125m;
+// decimal newProfit = 63000000.0m;
+
+// Console.WriteLine($"Dear {customerName},");
+// Console.WriteLine($"As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.\n");
+// Console.WriteLine($"Currently, you own {currentShares:N2} shares at a return of {currentReturn:P2}.\n");
+// Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:P2}.  Given your current volume, your potential profit would be {newProfit:c}.\n");
+
+// Console.WriteLine("Here's a quick comparison:\n");
+
+// string comparisonMessage = currentProduct.PadRight(20);
+// comparisonMessage += String.Format("{0:P2}", currentReturn).PadRight(10);
+// comparisonMessage += String.Format("{0:c}", currentProfit).PadRight(20);
+// comparisonMessage += "\n";
+// comparisonMessage += newProduct.PadRight(20);
+// comparisonMessage += String.Format("{0:P2}", newReturn).PadRight(10);
+// comparisonMessage += String.Format("{0:c}", newProfit).PadRight(20);
+// // Your logic here
+
+// Console.WriteLine(comparisonMessage);
+
+
+// // Dear Ms. Barros,
+// // As a customer of our Magic Yield offering we are excited to tell you about a new financial product that would dramatically increase your return.
+
+// // Currently, you own 2,975,000.00 shares at a return of 12.75%.
+
+// // Our new product, Glorious Future offers a return of 13.13%.  Given your current volume, your potential profit would be $63,000,000.00.
+
+// // Here's a quick comparison:
+
+// // Magic Yield         12.75%   $55,000,000.00      
+// // Glorious Future     13.13%   $63,000,000.00  
+
+// string message = "(What if) there are (more than) one (set of parentheses)?";
+
+// while (true)
+// {
+//     int open = message.IndexOf('(');
+//     if (open == -1) break;
+
+//     open += 1;
+
+//     int close = message.IndexOf(')');
+
+//     int Length = close - open;
+
+//     Console.WriteLine(message.Substring(open, Length));
+
+//     message = message.Substring(close + 1);
+// }
+
+
+// string message = "(What if) I have [different symbols] but every {open symbol} needs a [matching closing symbol]?";
+
+// // The IndexOfAny() helper method requires a char array of characters. 
+// // You want to look for:
+
+// char[] openSymbols = ['[', '{', '('];
+
+// // You'll use a slightly different technique for iterating through 
+// // the characters in the string. This time, use the closing 
+// // position of the previous iteration as the starting index for the 
+// //next open symbol. So, you need to initialize the closingPosition 
+// // variable to zero:
+
+// int closingPosition = 0;
+
+// while (true)
+// {
+//     int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
+
+//     if (openingPosition == -1) break;
+
+//     string currentSymbol = message.Substring(openingPosition, 1);
+
+//     // Now  find the matching closing symbol
+//     char matchingSymbol = ' ';
+
+//     switch (currentSymbol)
+//     {
+//         case "[":
+//             matchingSymbol = ']';
+//             break;
+//         case "{":
+//             matchingSymbol = '}';
+//             break;
+//         case "(":
+//             matchingSymbol = ')';
+//             break;
+//     }
+
+//     // To find the closingPosition, use an overload of the IndexOf method to specify 
+//     // that the search for the matchingSymbol should start at the openingPosition in the string. 
+
+//     openingPosition += 1;
+//     closingPosition = message.IndexOf(matchingSymbol, openingPosition);
+
+//     // Finally, use the techniques you've already learned to display the sub-string:
+
+//     int length = closingPosition - openingPosition;
+//     Console.WriteLine(message.Substring(openingPosition, length));
+// }
+
+// string message = "(What if) I have [different symbols] but every {open symbol} needs a [matching closing symbol]?";
+// char[] openSymbols = ['{', '(', '['];
+
+// int closingPosition = 0;
+
+// while (true)
+// {
+//     int openingPosition = message.IndexOfAny(openSymbols, closingPosition);
+//     if (openingPosition == -1) break;
+
+//     string currentSymbol = message.Substring(openingPosition, 1);//(openingPosition,(n-1))
+
+//     string matchingSymbol = "";
+
+//     switch (currentSymbol)
+//     {
+//         case "(":
+//             matchingSymbol = ")";
+//             break;
+//         case "{":
+//             matchingSymbol = "}";
+//             break;
+//         case "[":
+//             matchingSymbol = "]";
+//             break;
+//     }
+
+//     openingPosition += 1;
+
+//     closingPosition = message.IndexOf(matchingSymbol, openingPosition);
+
+//     int length = closingPosition - openingPosition;
+
+
+//     Console.WriteLine(message.Substring(openingPosition, length));
+// }
+
+// string data = "12345John Smith12345678905000  3  ";
+// string updatedData = data.Remove(5, 20);
+// Console.WriteLine(updatedData);
+
+
+// string message = "This--is--ex-amp-le--da-ta"; 
+// message = message.Replace("--", " "); Console.WriteLine(message);// This is ex-amp-le da-ta 
+// message = message.Replace("-", "");Console.WriteLine(message); //this is example data
+// Console.WriteLine(message);
+
+// const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+
+// string quantity = "";
+// string output = "";
+
+// // Your work here
+
+// int span = input.IndexOf("<span>");
+// int spanEnd = input.IndexOf("</span>");
+
+// Console.WriteLine(span);
+// Console.WriteLine(spanEnd);
+
+// Console.WriteLine(quantity);
+// Console.WriteLine(output);
+
+
+///////////////////////////////////////////////////////////////////////////////////Project////////////////////////////////////////////////////
+
+// Final
+
+// ourAnimals array will store the following: 
+string animalSpecies = "";
+string animalID = "";
+string animalAge = "";
+string animalPhysicalDescription = "";
+string animalPersonalityDescription = "";
+string animalNickname = "";
+string suggestedDonation = "";
+
+// variables that support data entry
+int maxPets = 8;
+string? readResult;
+string menuSelection = "";
+decimal decimalDonation = 0.00m;
+
+// array used to store runtime data
+string[,] ourAnimals = new string[maxPets, 7];
+
+// sample data ourAnimals array entries
+for (int i = 0; i < maxPets; i++)
 {
-    char[] c = pangram2[i].ToCharArray(); // the t,h,e
+    switch (i)
+    {
+        case 0:
+            animalSpecies = "dog";
+            animalID = "d1";
+            animalAge = "2";
+            animalPhysicalDescription = "medium sized cream colored female golden retriever weighing about 45 pounds. housebroken.";
+            animalPersonalityDescription = "loves to have her belly rubbed and likes to chase her tail. gives lots of kisses.";
+            animalNickname = "lola";
+            suggestedDonation = "85.00";
+            break;
 
-    Array.Reverse(c);    //e h t
+        case 1:
+            animalSpecies = "dog";
+            animalID = "d2";
+            animalAge = "9";
+            animalPhysicalDescription = "large reddish-brown male golden retriever weighing about 85 pounds. housebroken.";
+            animalPersonalityDescription = "loves to have his ears rubbed when he greets you at the door, or at any time! loves to lean-in and give doggy hugs.";
+            animalNickname = "gus";
+            suggestedDonation = "49.99";
+            break;
 
-    newpangram[i] = new string(c);
+        case 2:
+            animalSpecies = "cat";
+            animalID = "c3";
+            animalAge = "1";
+            animalPhysicalDescription = "small white female weighing about 8 pounds. litter box trained.";
+            animalPersonalityDescription = "friendly";
+            animalNickname = "snow";
+            suggestedDonation = "40.00";
+            break;
+
+        case 3:
+            animalSpecies = "cat";
+            animalID = "c4";
+            animalAge = "";
+            animalPhysicalDescription = "";
+            animalPersonalityDescription = "";
+            animalNickname = "lion";
+            suggestedDonation = "";
+
+            break;
+
+        default:
+            animalSpecies = "";
+            animalID = "";
+            animalAge = "";
+            animalPhysicalDescription = "";
+            animalPersonalityDescription = "";
+            animalNickname = "";
+            suggestedDonation = "";
+            break;
+    }
+
+    ourAnimals[i, 0] = "ID #: " + animalID;
+    ourAnimals[i, 1] = "Species: " + animalSpecies;
+    ourAnimals[i, 2] = "Age: " + animalAge;
+    ourAnimals[i, 3] = "Nickname: " + animalNickname;
+    ourAnimals[i, 4] = "Physical description: " + animalPhysicalDescription;
+    ourAnimals[i, 5] = "Personality: " + animalPersonalityDescription;
+    
+    if (!decimal.TryParse(suggestedDonation, out decimalDonation))
+    {
+        decimalDonation = 45.00m; // if suggestedDonation NOT a number, default to 45.00
+    }
+    ourAnimals[i, 6] = $"Suggested Donation: {decimalDonation:C2}";
 }
 
-string result = String.Join(" ", newpangram);
-Console.WriteLine(result);
+// top-level menu options
+do
+{
+    // NOTE: the Console.Clear method is throwing an exception in debug sessions
+    Console.Clear();
+
+    Console.WriteLine("Welcome to the Contoso PetFriends app. Your main menu options are:");
+    Console.WriteLine(" 1. List all of our current pet information");
+    Console.WriteLine(" 2. Display all dogs with a specified characteristic");
+    Console.WriteLine();
+    Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
+
+    readResult = Console.ReadLine();
+
+    if (readResult != null)
+    {
+        menuSelection = readResult.ToLower();
+    }
+
+    // switch-case to process the selected menu option
+    switch (menuSelection)
+    {
+        case "1":
+            // list all pet info
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    Console.WriteLine();
+
+                    for (int j = 0; j < 7; j++)
+                    {
+                        Console.WriteLine(ourAnimals[i, j].ToString());
+                    }
+                }
+            }
+
+            Console.WriteLine("\r\nPress the Enter key to continue");
+            readResult = Console.ReadLine();
+
+            break;
+
+        case "2":
+            // #1 Display all dogs with a multiple search characteristics
+
+            string dogCharacteristics = "";
+
+            while (dogCharacteristics == "")
+            {
+                // #2 have user enter multiple comma separated characteristics to search for
+                Console.WriteLine($"\nEnter dog characteristics to search for separated by commas");
+                readResult = Console.ReadLine();
+
+                if (readResult != null)
+                {
+                    dogCharacteristics = readResult.ToLower();
+                    Console.WriteLine();
+                }
+            }
+
+            string[] dogSearches = dogCharacteristics.Split(",");
+            // trim leading and trailing spaces from each search term
+            for (int i = 0; i < dogSearches.Length; i++)
+            {
+                dogSearches[i] = dogSearches[i].Trim();
+            }
+
+            Array.Sort(dogSearches);
+            // #4 update to "rotating" animation with countdown
+            string[] searchingIcons = {" |", " /", "--", " \\", " *"};
+
+            bool matchesAnyDog = false;
+            string dogDescription = "";
+
+            // loops through the ourAnimals array to search for matching animals
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 1].Contains("dog"))
+                {
+
+                    // Search combined descriptions and report results
+                    dogDescription = ourAnimals[i, 4] + "\n" + ourAnimals[i, 5];
+                    bool matchesCurrentDog = false;
+
+                    foreach (string term in dogSearches)
+                    {
+                        // only search if there is a term to search for
+                        if (term != null && term.Trim() != "")
+                        {
+                            for (int j = 2; j > -1 ; j--)
+                            {
+                                // #5 update "searching" message to show countdown
+                                foreach (string icon in searchingIcons)
+                                {
+                                    Console.Write($"\rsearching our dog {ourAnimals[i, 3]} for {term.Trim()} {icon} {j.ToString()}");
+                                    Thread.Sleep(100);
+                                }
+                                
+                                Console.Write($"\r{new String(' ', Console.BufferWidth)}");
+                            }
+
+                            // #3a iterate submitted characteristic terms and search description for each term
+                            if (dogDescription.Contains(" " + term.Trim() + " "))
+                            {
+                                // #3b update message to reflect current search term match 
+
+                                Console.WriteLine($"\rOur dog {ourAnimals[i, 3]} matches your search for {term.Trim()}");
+
+                                matchesCurrentDog = true;
+                                matchesAnyDog = true;
+                            }
+                        }
+                    }
+                    
+                    // #3d if the current dog is match, display the dog's info
+                    if (matchesCurrentDog)
+                    {
+                        Console.WriteLine($"\r{ourAnimals[i, 3]} ({ourAnimals[i, 0]})\n{dogDescription}\n");
+                    }
+                }
+            }
+
+            if (!matchesAnyDog)
+            {
+                Console.WriteLine("None of our dogs are a match found for: " + dogCharacteristics);
+            }
+
+            Console.WriteLine("\n\rPress the Enter key to continue");
+            readResult = Console.ReadLine();
+
+            break;
+
+        default:
+            break;
+    }
+} 
+while (menuSelection != "exit");
